@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import axios from "axios";
+import Weather from "./Weather.js";
 
 export default function App() {
   return (
