@@ -41,7 +41,7 @@ if (weatherData.ready) {
         <div className="col-7">
           <h1>☀️ 73°F</h1>
           <h4>Washington, D.C</h4>
-          <h5>Sunny</h5>
+          <h5>{props.data.weather[0].description}</h5>
         </div>
         <div className="col-5">
         <form onSubmit={handleSubmit}>
@@ -73,12 +73,12 @@ if (weatherData.ready) {
         <hr/>
         <ul>
           <li>
-            Humditiy:
+            Humditiy: {props.data.humidity}%
           </li>
           <li>
-            Wind:
+            Wind: {props.data.wind}mph
           </li>
-          <li>Percipitation:</li>
+          <li>Percipitation: {props.data}</li>
         </ul>
         </div>
       </div>
