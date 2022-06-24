@@ -6,9 +6,10 @@ import WeatherIcons from "./WeatherIcons.js";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
-    const [city, setCity] = useState(props.defualtCity);
+    const [city, setCity] = useState(props.defaultCity);
 
 function handleResponse(response) {
+    console.log(response.data);
   setWeatherData ({
     ready: true,
     temperature: response.data.main.temp,
@@ -32,7 +33,7 @@ function handleCityChange(event) {
 
 function search() {
   const apiKey = "7d81cb66d2a78969cfec2f704335508f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(handleResponse);
 }
 
@@ -41,11 +42,11 @@ if (weatherData.ready) {
     <div className="row">
       <div className="col-7">
         <h1>
-          <WeatherIcons code="{props.data.icon}" />{" "}
-          <span>{Math.round(weatherData.temperature)}</span>°F
+          <span className="icon"><WeatherIcons code={weatherData.icon} /></span>{" "}
+          <span className="temp">{Math.round(weatherData.temperature)}</span>°F
         </h1>
         <h4>{weatherData.city}</h4>
-        <h5>{weatherData.description}</h5>
+        <h6 className="text-capitalize">{weatherData.description}</h6>
       </div>
       <div className="col-5">
         <form onSubmit={handleSubmit}>
@@ -53,7 +54,7 @@ if (weatherData.ready) {
             <div className="col-9">
               <input
                 className="form-control"
-                type="text"
+                type="search"
                 placeholder="Enter a city"
                 autoFocus="on"
                 autoComplete="off"
@@ -67,21 +68,20 @@ if (weatherData.ready) {
         </form>
         <hr />
         <ul className="date-time">
-          <li>
-            <WeatherDate />
+          <li key="index">
+            <WeatherDate date={weatherData.date}/>
           </li>
         </ul>
         <hr />
         <ul>
-          <li>Humditiy: {weatherData.humidity}%</li>
-          <li>Wind: {weatherData.wind}mph</li>
-          <li>Percipitation: {weatherData.percipitation}</li>
+          <li key="index">Humditiy: {weatherData.humidity}%</li>
+          <li key="index">Wind: {Math.round(weatherData.wind)}{" "}mph</li>
         </ul>
       </div>
     </div>
   );
 } else {
     search();
-    return "Loading...";
+    return "Loading..."
 }
 }
