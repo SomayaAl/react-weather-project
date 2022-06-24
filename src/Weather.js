@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
+import WeatherDate from "./WeatherDate.js";
+import WeatherIcons from "./WeatherIcons.js";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -39,8 +41,8 @@ if (weatherData.ready) {
   return (
         <div className="row">
         <div className="col-7">
-          <h1>☀️ 73°F</h1>
-          <h4>Washington, D.C</h4>
+          <h1><WeatherIcons/> {props.data.temperature}°F</h1>
+          <h4>{props.data.city}</h4>
           <h5>{props.data.weather[0].description}</h5>
         </div>
         <div className="col-5">
@@ -64,10 +66,7 @@ if (weatherData.ready) {
         <hr/>
         <ul className="date-time">
           <li>
-            Thursday June 23
-          </li>
-          <li>
-            5:00pm
+            <WeatherDate/>
           </li>
         </ul>
         <hr/>
@@ -78,7 +77,7 @@ if (weatherData.ready) {
           <li>
             Wind: {props.data.wind}mph
           </li>
-          <li>Percipitation: {props.data}</li>
+          <li>Percipitation: {props.data.percipitation}</li>
         </ul>
         </div>
       </div>
