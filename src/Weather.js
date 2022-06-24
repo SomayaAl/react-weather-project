@@ -48,8 +48,8 @@ if (weatherData.ready) {
             <WeatherIcons code={weatherData.icon} />
           </span>{" "}
           <span className="temp">{Math.round(weatherData.temperature)}</span>
-          <span className="fahrenheit-link">°F</span> |{" "}
-          <span className="celsius-link">°C</span>
+          <span className="main-fahrenheit-link">°F</span> |{" "}
+          <span className="main-celsius-link">°C</span>
         </h1>
         <h4>{weatherData.city}</h4>
         <h6 className="text-capitalize">{weatherData.description}</h6>
