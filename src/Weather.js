@@ -13,6 +13,8 @@ function handleResponse(response) {
   setWeatherData ({
     ready: true,
     temperature: response.data.main.temp,
+    low: response.data.main.temp_min,
+    high: response.data.main.temp_max,
     wind: response.data.wind.speed,
     city: response.data.name,
     humidity: response.data.main.humidity,
@@ -42,8 +44,12 @@ if (weatherData.ready) {
     <div className="row">
       <div className="col-7">
         <h1>
-          <span className="icon"><WeatherIcons code={weatherData.icon} /></span>{" "}
-          <span className="temp">{Math.round(weatherData.temperature)}</span>°F
+          <span className="icon">
+            <WeatherIcons code={weatherData.icon} />
+          </span>{" "}
+          <span className="temp">{Math.round(weatherData.temperature)}</span>
+          <span className="fahrenheit-link">°F</span> |{" "}
+          <span className="celsius-link">°C</span>
         </h1>
         <h4>{weatherData.city}</h4>
         <h6 className="text-capitalize">{weatherData.description}</h6>
@@ -69,13 +75,23 @@ if (weatherData.ready) {
         <hr />
         <ul className="date-time">
           <li key="index">
-            <WeatherDate date={weatherData.date}/>
+            <WeatherDate date={weatherData.date} />
           </li>
         </ul>
         <hr />
         <ul>
+          <li key="index">
+            High: {Math.round(weatherData.high)}
+            <span className="fahrenheit-link">°F</span> |{" "}
+            <span className="celsius-link">°C</span>
+          </li>
+          <li key="index">
+            Low: {Math.round(weatherData.low)}
+            <span className="fahrenheit-link">°F</span> |{" "}
+            <span className="celsius-link">°C</span>
+          </li>
           <li key="index">Humditiy: {weatherData.humidity}%</li>
-          <li key="index">Wind: {Math.round(weatherData.wind)}{" "}mph</li>
+          <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
         </ul>
       </div>
     </div>
