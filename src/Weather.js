@@ -38,13 +38,16 @@ function search() {
 
 if (weatherData.ready) {
   return (
-        <div className="row">
-        <div className="col-7">
-          <h1><WeatherIcons code="{props.data.icon}"/> {weatherData.temperature}°F</h1>
-          <h4>{props.data.city}</h4>
-          <h5>{weatherData.description}</h5>
-        </div>
-        <div className="col-5">
+    <div className="row">
+      <div className="col-7">
+        <h1>
+          <WeatherIcons code="{props.data.icon}" />{" "}
+          <span>{Math.round(weatherData.temperature)}</span>°F
+        </h1>
+        <h4>{weatherData.city}</h4>
+        <h5>{weatherData.description}</h5>
+      </div>
+      <div className="col-5">
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
@@ -62,24 +65,20 @@ if (weatherData.ready) {
             </div>
           </div>
         </form>
-        <hr/>
+        <hr />
         <ul className="date-time">
           <li>
-            <WeatherDate/>
+            <WeatherDate />
           </li>
         </ul>
-        <hr/>
+        <hr />
         <ul>
-          <li>
-            Humditiy: {weatherData.humidity}%
-          </li>
-          <li>
-            Wind: {weatherData.wind}mph
-          </li>
+          <li>Humditiy: {weatherData.humidity}%</li>
+          <li>Wind: {weatherData.wind}mph</li>
           <li>Percipitation: {weatherData.percipitation}</li>
         </ul>
-        </div>
       </div>
+    </div>
   );
 } else {
     search();
