@@ -40,9 +40,9 @@ if (weatherData.ready) {
   return (
         <div className="row">
         <div className="col-7">
-          <h1><WeatherIcons/> {props.data.temperature}°F</h1>
+          <h1><WeatherIcons code="{props.data.icon}"/> {weatherData.temperature}°F</h1>
           <h4>{props.data.city}</h4>
-          <h5>{props.data.weather[0].description}</h5>
+          <h5>{weatherData.description}</h5>
         </div>
         <div className="col-5">
         <form onSubmit={handleSubmit}>
@@ -71,12 +71,12 @@ if (weatherData.ready) {
         <hr/>
         <ul>
           <li>
-            Humditiy: {props.data.humidity}%
+            Humditiy: {weatherData.humidity}%
           </li>
           <li>
-            Wind: {props.data.wind}mph
+            Wind: {weatherData.wind}mph
           </li>
-          <li>Percipitation: {props.data.percipitation}</li>
+          <li>Percipitation: {weatherData.percipitation}</li>
         </ul>
         </div>
       </div>
