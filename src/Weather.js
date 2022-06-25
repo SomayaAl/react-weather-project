@@ -88,6 +88,7 @@ export default function Weather(props) {
             <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
           </ul>
           <hr />
+          <h6>5-day Forecast</h6>
           <ul>
               <WeatherForecast coordinates={weatherData.coordinates} />
           </ul>
