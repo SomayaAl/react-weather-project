@@ -45,7 +45,7 @@ export default function Weather(props) {
       <div className="row">
         <div className="col-7">
             <span className="icon">
-              <WeatherIcons code={weatherData.icon} />
+              <WeatherIcons code={weatherData.icon} size={54}/>
             </span>{" "}
             <span>
             <WeatherTemperature temperature={weatherData.temperature}/>
