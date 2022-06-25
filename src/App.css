@@ -1,5 +1,4 @@
 .App {
-  display: block;
   margin: 100px 200px;
   padding: 100px;
   border: 1px solid gray;
@@ -17,4 +16,18 @@ li {
 
 .fahrenheit-link {
   font-size: 10px;
+}
+
+.celsius-link {
+  font-size: 10px;
+}
+
+.units-temp {
+  font-size: 20px;
+  position: relative;
+  top: -14px;
+}
+
+#main-fahrenheit-link, #main-celsius-link {
+  text-decoration: none;
 }
