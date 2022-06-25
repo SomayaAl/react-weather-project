@@ -43,3 +43,10 @@ li {
   position: relative;
   top: 8px;
 }
+
+footer {
+  color: gray;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -60px;
+}
