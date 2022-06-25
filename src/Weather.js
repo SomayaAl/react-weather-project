@@ -4,15 +4,16 @@ import axios from "axios";
 import WeatherDate from "./WeatherDate.js";
 import WeatherIcons from "./WeatherIcons.js";
 import WeatherTemperature from "./WeatherTemperature.js";
+import WeatherForecast from "./WeatherForecast.js";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       low: response.data.main.temp_min,
       high: response.data.main.temp_max,
@@ -85,6 +86,10 @@ export default function Weather(props) {
           <ul>
             <li key="index">Humditiy: {weatherData.humidity}%</li>
             <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
+          </ul>
+          <hr />
+          <ul>
+              <WeatherForecast coordinates={weatherData.coordinates} />
           </ul>
         </div>
       </div>
