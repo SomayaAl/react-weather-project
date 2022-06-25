@@ -85,30 +85,6 @@ export default function Weather(props) {
           </ul>
           <hr />
           <ul>
-            <li key="index">
-              High: {Math.round(weatherData.high)}
-              <span className="units-temp">
-                <a href="/" id="fahrenheit-link">
-                  °F
-                </a>{" "}
-                |{" "}
-                <a href="/" id="celsius-link">
-                  °C
-                </a>
-              </span>
-            </li>
-            <li key="index">
-              Low: {Math.round(weatherData.low)}
-              <span className="units-temp">
-                <a href="/" id="fahrenheit-link">
-                  °F
-                </a>{" "}
-                |{" "}
-                <a href="/" id="celsius-link">
-                  °C
-                </a>
-              </span>
-            </li>
             <li key="index">Humditiy: {weatherData.humidity}%</li>
             <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
           </ul>

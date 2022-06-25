@@ -20,7 +20,7 @@ li {
   top: -14px;
 }
 
-#main-fahrenheit-link, #main-celsius-link {
+#main-celsius-link {
   text-decoration: none;
 }
 
@@ -30,6 +30,6 @@ li {
   top: -5px;
 }
 
-#fahrenheit-link, #celsius-link {
+#celsius-link {
   text-decoration: none;
 }
