@@ -44,14 +44,12 @@ export default function Weather(props) {
     return (
       <div className="row">
         <div className="col-7">
-          <h1>
             <span className="icon">
               <WeatherIcons code={weatherData.icon} />
             </span>{" "}
             <span>
             <WeatherTemperature temperature={weatherData.temperature}/>
             </span>
-          </h1>
           <h4>{weatherData.city}</h4>
           <h6 className="text-capitalize">{weatherData.description}</h6>
         </div>

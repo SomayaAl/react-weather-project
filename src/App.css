@@ -17,7 +17,7 @@ li {
 .main-units-temp {
   font-size: 20px;
   position: relative;
-  top: -14px;
+  top: -22px;
 }
 
 #main-celsius-link {
@@ -32,4 +32,14 @@ li {
 
 #celsius-link {
   text-decoration: none;
+}
+
+.weather-temperature {
+  display: inline-block;
+  font-size: 54px;
+}
+
+.icon {
+  position: relative;
+  top: 8px;
 }
