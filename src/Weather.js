@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import WeatherDate from "./WeatherDate.js";
 import WeatherIcons from "./WeatherIcons.js";
+import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -47,15 +48,8 @@ export default function Weather(props) {
             <span className="icon">
               <WeatherIcons code={weatherData.icon} />
             </span>{" "}
-            <span className="temp">{Math.round(weatherData.temperature)}</span>
-            <span className="units-temp">
-              <a href="/" id="main-fahrenheit-link">
-                °F
-              </a>{" "}
-              |{" "}
-              <a href="/" id="main-celsius-link">
-                °C
-              </a>
+            <span>
+            <WeatherTemperature temperature={weatherData.temperature}/>
             </span>
           </h1>
           <h4>{weatherData.city}</h4>
@@ -93,13 +87,27 @@ export default function Weather(props) {
           <ul>
             <li key="index">
               High: {Math.round(weatherData.high)}
-              <span className="fahrenheit-link">°F</span> |{" "}
-              <span className="celsius-link">°C</span>
+              <span className="units-temp">
+                <a href="/" id="fahrenheit-link">
+                  °F
+                </a>{" "}
+                |{" "}
+                <a href="/" id="celsius-link">
+                  °C
+                </a>
+              </span>
             </li>
             <li key="index">
               Low: {Math.round(weatherData.low)}
-              <span className="fahrenheit-link">°F</span> |{" "}
-              <span className="celsius-link">°C</span>
+              <span className="units-temp">
+                <a href="/" id="fahrenheit-link">
+                  °F
+                </a>{" "}
+                |{" "}
+                <a href="/" id="celsius-link">
+                  °C
+                </a>
+              </span>
             </li>
             <li key="index">Humditiy: {weatherData.humidity}%</li>
             <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
