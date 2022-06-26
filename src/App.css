@@ -58,6 +58,12 @@ li {
   justify-content: space-between;
 }
 
+.unit {
+  font-size: 12px;
+  position: relative;
+  top: -3px;
+}
+
 footer {
   color: gray;
   text-align: center;
