@@ -1,6 +1,6 @@
 .App {
   margin: 80px 300px;
- 
+
   border-radius: 20px;
 }
 
@@ -31,6 +31,7 @@ li {
 
 #main-celsius-link {
   text-decoration: none;
+  color: black;
 }
 
 .units-temp {
@@ -53,11 +54,12 @@ li {
   top: 8px;
 }
 
-.weather-details, .date-time {
+.weather-details,
+.date-time {
   text-align: center;
 }
 
-.forecast-title{
+.forecast-title {
   text-align: center;
 }
 
@@ -77,8 +79,11 @@ li {
   top: -3px;
 }
 
-.btn {
-  background-color: rgb(228, 200, 183);
+.btn-primary {
+  margin-left: -10px;
+  background-color: rgb(228, 200, 183) !important;
+  border-color: rgb(228, 200, 183) !important;
+  color: black !important;
 }
 
 footer {
