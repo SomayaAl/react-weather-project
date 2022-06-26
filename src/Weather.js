@@ -83,7 +83,7 @@ export default function Weather(props) {
             </li>
           </ul>
           <hr />
-          <ul>
+          <ul className="weather-details">
             <li key="index">
               High: {Math.round(weatherData.high)}
               <span className="unit">°F</span>

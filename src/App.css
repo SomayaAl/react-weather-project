@@ -1,6 +1,6 @@
 .App {
-  margin: 100px 200px;
-  padding: 100px;
+  margin: 80px 200px;
+  padding: 70px;
   border: 1px solid gray;
   border-radius: 20px;
 }
@@ -42,6 +42,10 @@ li {
 .icon {
   position: relative;
   top: 8px;
+}
+
+.weather-details, .date-time {
+  text-align: center;
 }
 
 .forecast-title{
