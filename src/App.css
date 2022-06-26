@@ -44,6 +44,16 @@ li {
   top: 8px;
 }
 
+.forecast {
+  margin-top: 40px;
+  margin-right: -90px;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 footer {
   color: gray;
   text-align: center;

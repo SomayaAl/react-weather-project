@@ -45,12 +45,12 @@ export default function Weather(props) {
     return (
       <div className="row">
         <div className="col-7">
-            <span className="icon">
-              <WeatherIcons code={weatherData.icon} size={54}/>
-            </span>{" "}
-            <span>
-            <WeatherTemperature temperature={weatherData.temperature}/>
-            </span>
+          <span className="icon">
+            <WeatherIcons code={weatherData.icon} size={54} />
+          </span>{" "}
+          <span>
+            <WeatherTemperature temperature={weatherData.temperature} />
+          </span>
           <h4>{weatherData.city}</h4>
           <h6 className="text-capitalize">{weatherData.description}</h6>
         </div>
@@ -88,10 +88,10 @@ export default function Weather(props) {
             <li key="index">Wind: {Math.round(weatherData.wind)} mph</li>
           </ul>
           <hr />
-          <h6>5-day Forecast</h6>
-          <ul>
-              <WeatherForecast coordinates={weatherData.coordinates} />
-          </ul>
+          <h6 className="forecast-title">5-Day Forecast</h6>
+          <div className="row">
+            <WeatherForecast coordinates={weatherData.coordinates} />
+          </div>
         </div>
       </div>
     );
