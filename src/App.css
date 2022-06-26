@@ -44,6 +44,10 @@ li {
   top: 8px;
 }
 
+.forecast-title{
+  text-align: center;
+}
+
 .forecast {
   margin-top: 40px;
   margin-right: -90px;
