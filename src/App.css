@@ -1,12 +1,21 @@
 .App {
-  margin: 80px 200px;
-  padding: 70px;
-  border: 1px solid gray;
+  margin: 80px 300px;
+ 
   border-radius: 20px;
+}
+
+.weather-content {
+  padding: 70px;
 }
 
 .weather-info {
   margin-top: 30px;
+}
+
+.background-img {
+  background: no-repeat center fixed;
+  background-size: cover;
+  border-radius: 20px;
 }
 
 li {
@@ -55,7 +64,7 @@ li {
 .forecast {
   margin-top: 40px;
   margin-right: -90px;
-  margin-left: 60px;
+  margin-left: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -66,6 +75,10 @@ li {
   font-size: 12px;
   position: relative;
   top: -3px;
+}
+
+.btn {
+  background-color: rgb(228, 200, 183);
 }
 
 footer {
