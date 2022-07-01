@@ -95,6 +95,77 @@ footer {
 
 @media (max-width: 920px) {
   .App {
-  margin: 80px 300px;
+    margin: 30px auto;
+  }
+
+  .background-img {
+    width: 100%;
+    height: auto;
+    background: no-repeat center fixed;
+    background-size: cover;
+    border-radius: 10px;
+  }
+  .weather-info {
+    margin-top: 20px;
+  }
+
+  h4, h6 {
+    margin-left: -50px;
+  }
+
+  li {
+  list-style: none;
+  margin-left: -20px;
+  font-size: 15px;
 }
+
+  .main-units-temp {
+    font-size: 21px;
+    position: relative;
+    top: -14px;
+  }
+
+  .temp {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  #main-celsius-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .units-temp {
+    font-size: 10px;
+    position: relative;
+    top: -5px;
+  }
+
+  .icon {
+    position: relative;
+    top: 10px;
+    margin-left: -60px;
+    font-size: 12px;
+  }
+
+  .weather-details,
+  .date-time {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .forecast-title {
+    margin: 0 auto;
+    font-size: 15px;
+  }
+
+  .forecast {
+    margin-top: 20px;
+    margin-right: -80px;
+    margin-left: -20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
